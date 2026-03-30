@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Health Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🤖 AI Health Assistant</h1>
+
+    <div class="card">
+        <form method="POST">
+            <input type="number" step="0.01" name="height" placeholder="Height (meters)" required>
+            <input type="number" step="0.1" name="weight" placeholder="Weight (kg)" required>
+            <input type="number" name="sleep" placeholder="Sleep hours" required>
+            <input type="number" name="water" placeholder="Water intake (glasses)" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+    {% if bmi %}
+    <div class="result-card">
+        <h2>BMI: {{ bmi }}</h2>
+        <h3>Lifestyle Score: {{ lifestyle_score }}</h3>
+        <p>{{ suggestion }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
