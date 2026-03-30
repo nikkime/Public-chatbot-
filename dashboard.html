@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>Health Dashboard 💪</h1>
+
+<a href="/logout">Logout</a>
+
+<form method="POST">
+
+<input name="weight" placeholder="Weight (kg)" required>
+<input name="height" placeholder="Height (cm)" required>
+
+<h3>Lifestyle Score</h3>
+
+<p>Diet (0-25)</p>
+<input name="diet" type="number" max="25" required>
+
+<p>Exercise (0-25)</p>
+<input name="exercise" type="number" max="25" required>
+
+<p>Sleep (0-25)</p>
+<input name="sleep" type="number" max="25" required>
+
+<p>Water Intake (0-25)</p>
+<input name="water" type="number" max="25" required>
+
+<button type="submit">Analyze</button>
+
+</form>
+
+{% if bmi %}
+<h2>BMI: {{bmi}} ({{status}})</h2>
+<h2>Score: {{score}} / 100</h2>
+<h3>{{suggestion}}</h3>
+{% endif %}
+
+</body>
+</html>
