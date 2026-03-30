@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>AI Health Assistant</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<div class="container">
-    <h1>🤖 AI Health Assistant</h1>
+<h1>🤖 AI Health Assistant</h1>
 
-    <!-- FORM -->
+<!-- FORM -->
+<div class="form-box">
     <form method="POST">
-
-        <input type="number" step="any" name="height" placeholder="Height (cm)" required>
-        <input type="number" step="any" name="weight" placeholder="Weight (kg)" required>
-        <input type="number" step="any" name="sleep" placeholder="Sleep hours" required>
-        <input type="number" step="any" name="water" placeholder="Water intake (glasses)" required>
-
+        <input type="number" name="height" placeholder="Height (cm)" required>
+        <input type="number" name="weight" placeholder="Weight (kg)" required>
+        <input type="number" name="sleep" placeholder="Sleep hours" required>
+        <input type="number" name="water" placeholder="Water intake (glasses)" required>
         <button type="submit">Analyze</button>
     </form>
-
-    <!-- RESULT SECTION -->
-    {% if bmi %}
-    <div class="result">
-        <h2>BMI: {{ bmi }}</h2>
-        <h3>Category: {{ category }}</h3>
-        <h3>Lifestyle Score: {{ score }}</h3>
-
-        <h4>Suggestions:</h4>
-        <ul>
-            {% for s in suggestions %}
-            <li>{{ s }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
-
 </div>
+
+<!-- RESULT BELOW -->
+{% if bmi %}
+<div class="result-box">
+    <h2>BMI: {{ bmi }}</h2>
+    <h3>Category: {{ category }}</h3>
+    <h3>Lifestyle Score: {{ score }}</h3>
+
+    <h4>Suggestions:</h4>
+    <ul>
+        {% for s in suggestions %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
 </body>
 </html>
