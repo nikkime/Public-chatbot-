@@ -2,12 +2,33 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h2>Login Page</h2>
-    <form method="POST">
-        <input type="text" name="username" placeholder="Enter name" required>
-        <button type="submit">Login</button>
-    </form>
+
+<body class="center">
+
+<div class="login-container">
+
+    <h1>💙 Welcome to AI Health Assistant</h1>
+
+    <p class="subtitle">
+        Track your health, calculate BMI, and get smart lifestyle suggestions instantly.
+    </p>
+
+    <div class="login-card">
+        <h2>Login to Continue</h2>
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter your name" required>
+            <button type="submit">Start Your Journey 🚀</button>
+        </form>
+
+        <p class="footer-text">
+            Your health matters. Stay consistent, stay strong 💪
+        </p>
+    </div>
+
+</div>
+
 </body>
 </html>
